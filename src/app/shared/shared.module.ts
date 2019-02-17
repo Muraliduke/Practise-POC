@@ -4,9 +4,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { GridComponent } from './grid/grid.component';
 // For MDB Angular Free
-import { NavbarModule, WavesModule } from 'angular-bootstrap-md'
+import { NavbarModule, WavesModule } from 'angular-bootstrap-md';
+import { LoaderComponent } from './loader/loader.component'
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, GridComponent],
+  declarations: [HeaderComponent, FooterComponent, GridComponent, LoaderComponent],
   imports: [
     CommonModule,
     NavbarModule, WavesModule

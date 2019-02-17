@@ -15,6 +15,10 @@ import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { ApiService } from './core/api/api.service';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { HTTPListener, HTTPStatus } from './core/interceptor';
+
+const rxJSServices = [HTTPListener, HTTPStatus];
 
 const FeatureModules = [
   AdminModule,
@@ -36,8 +40,17 @@ const FeatureModules = [
     ...FeatureModules,
     MDBBootstrapModule.forRoot(),
     AgGridModule.withComponents([]),
+    NgxSpinnerModule
   ],
-  providers: [ApiService],
+  providers: [
+    ...rxJSServices,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HTTPListener,
+      multi: true
+    },
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { RegisterComponent } from '../register/register.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -25,12 +26,17 @@ export class LoginComponent implements OnInit {
     }
   };
 
-  constructor(private modalService: MDBModalService) {}
+  constructor(
+    private modalService: MDBModalService,
+    private router: Router ) {}
 
   openModal() {
     this.modalRef = this.modalService.show(RegisterComponent, this.modalOptions);
   }
 
+  login() {
+    this.router.navigate(['/user-dashboard'])
+  }
   ngOnInit() {
   }
 

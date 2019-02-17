@@ -6,7 +6,7 @@ import { UserHomeRoutingModule } from './user-routing.module';
 import { AgGridModule } from 'ag-grid-angular';
 
 // MDB Angular Free
-import { ModalModule, WavesModule, InputsModule, ButtonsModule } from 'angular-bootstrap-md';
+import { ModalModule, WavesModule, InputsModule, ButtonsModule, IconsModule, TooltipModule } from 'angular-bootstrap-md';
 import { CreateTicketComponent } from './create-ticket/create-ticket.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -17,7 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UserHomeRoutingModule,
     AgGridModule.withComponents([]),
     ModalModule, WavesModule, InputsModule, ButtonsModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule, IconsModule, TooltipModule
   ],
   entryComponents: [ CreateTicketComponent ]
 })
